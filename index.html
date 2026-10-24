@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ======================= 여기만 바꾸세요 (시작) =======================
+  카카오톡이나 네이버에 우리 가게 주소를 보내면, 아래 제목·설명·사진이 미리보기로 나옵니다.
+  미리보기를 만드는 프로그램은 상품 목록(products.txt)을 읽지 못하므로 여기에 직접 적습니다.
+  따옴표(") 안의 글자만 바꾸세요. 따옴표와 꺾쇠(< >)는 지우지 마세요.
+  진짜 주소가 생기면 og:image 의 images/og-image.png 앞에 그 주소를 붙이면 더 좋습니다.
+  예) https://우리가게.pages.dev/images/og-image.png
+-->
+<title>햇살농원 | 시골에서 직접 키운 농산물</title>
+<meta name="description" content="햇살농원은 시골에서 직접 키우고 말린 사과, 표고버섯, 꿀, 쌀을 보내 드립니다. 전화나 문자로 편하게 주문하세요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="햇살농원 | 시골에서 직접 키운 농산물">
+<meta property="og:description" content="직접 키운 농산물을 전화나 문자로 편하게 주문하세요.">
+<meta property="og:image" content="images/og-image.png">
+<!-- ======================= 여기만 바꾸세요 (끝) ======================= -->
+
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+<div id="practice-ribbon" class="ribbon" hidden>연습용 화면입니다 · 실제 판매는 하지 않습니다</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <h1 id="shop-name">우리 가게</h1>
+      <p id="shop-tagline" class="tagline" hidden></p>
+    </div>
+    <div class="header-side">
+      <div id="header-call"></div>
+      <button type="button" id="font-toggle" class="btn btn-plain small-btn" aria-pressed="false">글자 크게</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <noscript><p class="notice">이 화면을 보려면 휴대폰이나 컴퓨터의 자바스크립트 기능을 켜 주세요.</p></noscript>
+  <div id="load-error" class="notice error" hidden></div>
+
+  <h2 class="section-title">우리 가게 상품</h2>
+  <div id="products" class="grid" aria-live="polite">
+    <p class="loading">상품을 불러오는 중입니다…</p>
+  </div>
+
+  <h2 class="section-title">주문·배송 안내</h2>
+  <div id="shop-guide" class="guide"></div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-head">
+      <h2 id="modal-title">상품</h2>
+      <button type="button" id="modal-close" class="btn btn-plain">닫기 ✕</button>
+    </div>
+    <div id="modal-body" class="modal-body"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="shop.js"></script>
+</body>
+</html>
